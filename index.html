@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta content="#070b15" name="theme-color" />
+    <meta content="Ahmad Aref Musleh — Software Engineer, Laravel Backend Developer and Programming Instructor."
+        name="description" />
+    <title>Ahmad Aref Musleh | Software Engineer</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #070b15;
+            --panel: #101827;
+            --line: #243047;
+            --text: #eef3ff;
+            --muted: #a0acc3;
+            --a: #8a76ff;
+            --b: #43d6ef
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden
+        }
+
+        body:before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 80% 10%, #5745ba22, transparent 35%), radial-gradient(circle at 10% 70%, #0a9ab014, transparent 30%);
+            z-index: -1
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button {
+            font: inherit
+        }
+
+        .container {
+            max-width: 1160px;
+            margin: auto;
+            padding: 0 26px
+        }
+
+        header {
+            position: fixed;
+            z-index: 20;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(1100px, calc(100% - 28px));
+            background: #101728cf;
+            backdrop-filter: blur(18px);
+            border: 1px solid #ffffff1c;
+            border-radius: 18px
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 22px;
+            gap: 18px
+        }
+
+        .logo {
+            font: 700 21px 'Space Grotesk';
+            letter-spacing: -1px
+        }
+
+        .logo span,
+        .gradient {
+            background: linear-gradient(100deg, var(--a), var(--b));
+            background-clip: text;
+            color: transparent
+        }
+
+        .links {
+            display: flex;
+            gap: 24px;
+            font-size: 13px;
+            color: var(--muted)
+        }
+
+        .links a:hover {
+            color: white
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 19px;
+            border: 1px solid #8b7cff77;
+            border-radius: 100px;
+            background: #8b7cff14;
+            font-size: 13px;
+            font-weight: 700;
+            transition: .3s
+        }
+
+        .pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px #8b7cff35
+        }
+
+        .primary {
+            background: linear-gradient(120deg, #7562ef, #5c99ed);
+            border: 0
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 160px 0 100px
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            align-items: center;
+            gap: 40px
+        }
+
+        .eyebrow {
+            color: #9e9bff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700
+        }
+
+        .hero h1 {
+            font: 700 clamp(52px, 7.8vw, 108px)/.99 'Space Grotesk';
+            letter-spacing: -6px;
+            margin: 23px 0
+        }
+
+        .hero p {
+            max-width: 610px;
+            color: var(--muted);
+            font-size: 18px;
+            line-height: 1.8
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 32px
+        }
+
+        .visual {
+            height: 410px;
+            position: relative;
+            display: grid;
+            place-items: center;
+            perspective: 900px
+        }
+
+        .orb {
+            width: 290px;
+            height: 290px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 32% 28%, #a7e8ff, #7768ed 35%, #34235d 68%, #101827 85%);
+            box-shadow: 0 0 110px #7768ed55, inset -25px -25px 60px #05071488;
+            animation: float 7s ease-in-out infinite;
+            transform-style: preserve-3d
+        }
+
+        .ring {
+            position: absolute;
+            width: 350px;
+            height: 130px;
+            border: 2px solid #6de1ff99;
+            border-radius: 50%;
+            transform: rotate(-30deg);
+            box-shadow: 0 0 28px #65d9ff44;
+            animation: orbit 11s linear infinite
+        }
+
+        .float-tag {
+            position: absolute;
+            background: #111c31db;
+            border: 1px solid #8b7cff55;
+            padding: 13px 18px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            font: 600 13px 'Space Grotesk';
+            box-shadow: 0 20px 60px #0007
+        }
+
+        .tag1 {
+            top: 40px;
+            left: 0
+        }
+
+        .tag2 {
+            bottom: 44px;
+            right: 0
+        }
+
+        .tag3 {
+            top: 95px;
+            right: -12px
+        }
+
+        .scroll-note {
+            position: absolute;
+            bottom: 35px;
+            left: 26px;
+            color: #77859f;
+            font-size: 12px;
+            letter-spacing: 2px
+        }
+
+        section {
+            padding: 105px 0;
+            scroll-margin-top: 80px
+        }
+
+        .section-head {
+            margin-bottom: 43px
+        }
+
+        .section-head h2 {
+            font: 700 clamp(34px, 4.7vw, 58px) 'Space Grotesk';
+            letter-spacing: -2px;
+            margin: 12px 0
+        }
+
+        .section-head p {
+            color: var(--muted);
+            max-width: 660px;
+            line-height: 1.8
+        }
+
+        .stats,
+        .skills,
+        .projects,
+        .edu {
+            display: grid;
+            gap: 18px
+        }
+
+        .stats {
+            grid-template-columns: repeat(3, 1fr)
+        }
+
+        .stat,
+        .card,
+        .timeline-item {
+            background: linear-gradient(145deg, #121c2c, #0c1321);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 27px
+        }
+
+        .stat strong {
+            font: 700 38px 'Space Grotesk';
+            color: #c2b8ff
+        }
+
+        .stat p,
+        .card p,
+        .timeline-item p {
+            color: var(--muted);
+            line-height: 1.75
+        }
+
+        .skills {
+            grid-template-columns: repeat(4, 1fr)
+        }
+
+        .skill h3,
+        .card h3 {
+            font: 700 20px 'Space Grotesk';
+            margin: 0 0 18px
+        }
+
+        .chips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .chip {
+            padding: 9px 11px;
+            border-radius: 9px;
+            border: 1px solid #ffffff17;
+            background: #ffffff08;
+            font-size: 12px;
+            color: #c5d2e9
+        }
+
+        .projects {
+            grid-template-columns: repeat(2, 1fr)
+        }
+
+        .project-art {
+            height: 210px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #1b2952, #3b2a73 55%, #0b465e)
+        }
+
+        .project-art:before {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border: 1px solid #ffffff3d;
+            border-radius: 28px;
+            transform: rotate(24deg);
+            box-shadow: 0 0 0 30px #ffffff08, 0 0 0 65px #ffffff06
+        }
+
+        .project-art span {
+            position: relative;
+            font: 700 48px 'Space Grotesk';
+            letter-spacing: -3px
+        }
+
+        .project-art.hospital {
+            background: linear-gradient(135deg, #104558, #233a78 60%, #38275c)
+        }
+
+        .card {
+            transition: transform .3s, border-color .3s
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #8a76ff88
+        }
+
+        .timeline {
+            display: grid;
+            gap: 18px
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 25px
+        }
+
+        .date {
+            color: #a69bff;
+            font-size: 13px;
+            font-weight: 700
+        }
+
+        .timeline-item h3 {
+            margin: 0 0 5px;
+            font: 700 20px 'Space Grotesk'
+        }
+
+        .place {
+            color: #64d6e9 !important;
+            margin: 0
+        }
+
+        .edu {
+            grid-template-columns: repeat(2, 1fr)
+        }
+
+        .contact {
+            border: 1px solid #7562ef66;
+            border-radius: 30px;
+            padding: 60px;
+            background: radial-gradient(circle at 85% 15%, #6550c63d, transparent 55%), #11182a
+        }
+
+        .contact h2 {
+            font: 700 clamp(36px, 5vw, 64px) 'Space Grotesk';
+            letter-spacing: -2px;
+            margin: 12px 0
+        }
+
+        .contact p {
+            color: var(--muted);
+            line-height: 1.8
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 28px 0;
+            color: #8d9bb5;
+            font-size: 13px
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity .8s, transform .8s
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .cursor-glow {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            z-index: -1;
+            background: radial-gradient(circle, #8070ef12, transparent 65%);
+            transform: translate(-50%, -50%)
+        }
+
+        @keyframes float {
+            50% {
+                transform: translateY(-23px) rotate(9deg)
+            }
+        }
+
+        @keyframes orbit {
+            50% {
+                transform: rotate(150deg)
+            }
+        }
+
+        @media(max-width:850px) {
+            .hero-grid {
+                grid-template-columns: 1fr
+            }
+
+            .hero {
+                padding-top: 140px
+            }
+
+            .visual {
+                height: 320px
+            }
+
+            .orb {
+                width: 220px;
+                height: 220px
+            }
+
+            .ring {
+                width: 275px
+            }
+
+            .skills {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .hero h1 {
+                letter-spacing: -3px
+            }
+
+            .links {
+                display: none
+            }
+        }
+
+        @media(max-width:600px) {
+
+            .projects,
+            .stats,
+            .edu,
+            .skills {
+                grid-template-columns: 1fr
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 8px
+            }
+
+            .contact {
+                padding: 30px
+            }
+
+            .hero h1 {
+                font-size: 56px
+            }
+
+            .nav {
+                padding: 12px
+            }
+
+            .visual {
+                height: 280px
+            }
+
+            .tag3 {
+                right: 0
+            }
+
+            .scroll-note {
+                display: none
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *:before,
+            *:after {
+                animation: none !important;
+                scroll-behavior: auto !important;
+                transition: none !important
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        /* Bilingual identity upgrade */
+        .hero h1.name-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(49px, 6.5vw, 94px);
+            letter-spacing: -4px;
+            line-height: 1.04;
+            margin: 20px 0 16px;
+            overflow-wrap: normal;
+            text-wrap: balance
+        }
+
+        .name-title .name-line {
+            display: block;
+            white-space: nowrap
+        }
+
+        .hero .hero-role {
+            font-size: clamp(20px, 2.2vw, 29px);
+            font-weight: 700;
+            color: #dce7ff;
+            margin: 0 0 14px;
+            line-height: 1.5
+        }
+
+        .hero .name-kicker {
+            color: #a69bff;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            text-transform: uppercase
+        }
+
+        .name-title .name-line {
+            animation: name-rise 1s both
+        }
+
+        .name-title .name-line:nth-child(2) {
+            animation-delay: .18s
+        }
+
+        @keyframes name-rise {
+            from {
+                opacity: 0;
+                transform: translateY(26px);
+                filter: blur(9px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0)
+            }
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            border: 1px solid #8b7cff77;
+            border-radius: 999px;
+            padding: 4px;
+            background: #161f32;
+            flex-shrink: 0
+        }
+
+        .lang-btn {
+            border: 0;
+            border-radius: 999px;
+            padding: 7px 10px;
+            background: transparent;
+            color: #aab6ce;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 12px
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(110deg, #7562ef, #4d94df);
+            color: white
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center
+        }
+
+        .logo {
+            white-space: nowrap
+        }
+
+        html[dir=rtl] body {
+            font-family: 'Cairo', sans-serif
+        }
+
+        html[dir=rtl] .hero h1.name-title {
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: -2px;
+            font-size: clamp(45px, 6.3vw, 85px);
+            line-height: 1.35
+        }
+
+        html[dir=rtl] .section-head h2,
+        html[dir=rtl] .contact h2,
+        html[dir=rtl] .timeline-item h3,
+        html[dir=rtl] .skill h3,
+        html[dir=rtl] .card h3 {
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: 0
+        }
+
+        html[dir=rtl] .eyebrow,
+        html[dir=rtl] .name-kicker {
+            letter-spacing: 0
+        }
+
+        html[dir=rtl] .scroll-note {
+            left: auto;
+            right: 26px
+        }
+
+        html[dir=rtl] .hero-grid {
+            direction: rtl
+        }
+
+        html[dir=rtl] .visual {
+            direction: ltr
+        }
+
+        html[dir=rtl] .timeline-item {
+            text-align: right
+        }
+
+        html[dir=rtl] .logo,
+        html[dir=rtl] .lang-toggle {
+            direction: ltr
+        }
+
+        html[dir=rtl] .nav {
+            direction: rtl
+        }
+
+        @media(max-width:600px) {
+            .hero h1.name-title {
+                font-size: clamp(38px, 10vw, 55px);
+                letter-spacing: -2px
+            }
+
+            html[dir=rtl] .hero h1.name-title {
+                font-size: clamp(35px, 9vw, 51px)
+            }
+
+            .nav {
+                gap: 8px
+            }
+
+            .logo {
+                font-size: 17px
+            }
+
+            .nav-actions .pill {
+                padding: 9px 11px;
+                font-size: 11px
+            }
+
+            .lang-btn {
+                padding: 6px 8px
+            }
+        }
+
+        @media(max-width:370px) {
+            .nav-actions .pill {
+                display: none
+            }
+        }
+
+        /* Cinematic entry: language-aware, keyboard accessible, reduced-motion friendly */
+        body.intro-active {
+            overflow: hidden
+        }
+
+        #cinematic-intro {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #050812;
+            color: #f3f5ff;
+            isolation: isolate;
+            transition: opacity .8s ease, visibility .8s ease
+        }
+
+        #cinematic-intro.is-done {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none
+        }
+
+        #cinematic-intro::before {
+            content: "";
+            position: absolute;
+            inset: -30%;
+            background: radial-gradient(ellipse at 50% 50%, #493da04d 0%, #14182c55 25%, transparent 57%);
+            animation: intro-breathe 3s ease-in-out infinite alternate;
+            z-index: -1
+        }
+
+        .intro-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(#b3b8ff0b 1px, transparent 1px), linear-gradient(90deg, #b3b8ff0b 1px, transparent 1px);
+            background-size: 58px 58px;
+            mask-image: radial-gradient(ellipse at center, #000, transparent 78%);
+            animation: grid-enter 2.4s ease both
+        }
+
+        .intro-content {
+            text-align: center;
+            padding: 24px;
+            max-width: 100%;
+            position: relative
+        }
+
+        .intro-overline {
+            font: 700 11px 'Space Grotesk', sans-serif;
+            letter-spacing: .44em;
+            color: #9fafff;
+            opacity: 0;
+            animation: rise-in .7s .25s forwards
+        }
+
+        .intro-name {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .05em;
+            margin: 20px 0;
+            font: 800 clamp(46px, 9.3vw, 135px)/1.02 'Space Grotesk', sans-serif;
+            letter-spacing: -.065em
+        }
+
+        .intro-name .intro-line {
+            display: block;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateY(45px);
+            filter: blur(18px);
+            animation: cinematic-reveal 1.05s cubic-bezier(.16, 1, .3, 1) forwards
+        }
+
+        .intro-name .intro-line:nth-child(1) {
+            animation-delay: .45s
+        }
+
+        .intro-name .intro-line:nth-child(2) {
+            animation-delay: .77s;
+            background: linear-gradient(105deg, #a795ff 10%, #5fe0fa 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        .intro-subtitle {
+            font: 500 clamp(12px, 1.5vw, 16px) 'DM Sans', sans-serif;
+            letter-spacing: .16em;
+            color: #b9c3dd;
+            opacity: 0;
+            animation: rise-in .7s 1.3s forwards
+        }
+
+        .intro-progress {
+            width: min(270px, 55vw);
+            height: 2px;
+            background: #ffffff20;
+            margin: 34px auto 0;
+            overflow: hidden;
+            border-radius: 3px;
+            opacity: 0;
+            animation: rise-in .5s 1.2s forwards
+        }
+
+        .intro-progress::after {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 100%;
+            transform: translateX(-100%);
+            background: linear-gradient(90deg, #8b7cff, #63dfff);
+            animation: progress-load 1.8s 1.15s ease-in-out forwards
+        }
+
+        .intro-skip {
+            position: absolute;
+            bottom: 30px;
+            right: 34px;
+            border: 1px solid #ffffff36;
+            background: #ffffff0c;
+            color: #d4dcf1;
+            padding: 10px 17px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background .2s
+        }
+
+        .intro-skip:hover,
+        .intro-skip:focus-visible {
+            background: #ffffff25;
+            outline: 2px solid #7c8dff;
+            outline-offset: 3px
+        }
+
+        #cinematic-intro .intro-ar {
+            display: none
+        }
+
+        html[lang="ar"] #cinematic-intro .intro-en {
+            display: none
+        }
+
+        html[lang="ar"] #cinematic-intro .intro-ar {
+            display: block
+        }
+
+        html[lang="ar"] .intro-name {
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: -.035em;
+            font-size: clamp(38px, 8vw, 108px);
+            line-height: 1.4
+        }
+
+        html[lang="ar"] .intro-subtitle {
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: 0
+        }
+
+        html[lang="ar"] .intro-overline {
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: 0
+        }
+
+        html[lang="ar"] .intro-skip {
+            right: auto;
+            left: 34px
+        }
+
+        @keyframes cinematic-reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0)
+            }
+        }
+
+        @keyframes rise-in {
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes progress-load {
+            to {
+                transform: translateX(0)
+            }
+        }
+
+        @keyframes intro-breathe {
+            to {
+                transform: scale(1.2)
+            }
+        }
+
+        @keyframes grid-enter {
+            from {
+                opacity: 0;
+                transform: scale(1.2)
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
+        @media(max-width:600px) {
+            .intro-name {
+                font-size: clamp(39px, 10.5vw, 62px)
+            }
+
+            html[lang="ar"] .intro-name {
+                font-size: clamp(36px, 9vw, 58px)
+            }
+
+            .intro-skip {
+                bottom: 20px;
+                right: 20px
+            }
+
+            html[lang="ar"] .intro-skip {
+                left: 20px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            #cinematic-intro {
+                display: none !important
+            }
+
+            body.intro-active {
+                overflow: auto !important
+            }
+        }
+
+        /* Professional title and immersive skill presentation */
+        .professional-prefix {
+            font: 800 14px 'Space Grotesk', sans-serif;
+            letter-spacing: .3em;
+            color: #a9a3ff;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-shadow: 0 0 25px #8b7cff66;
+            animation: name-rise .85s both
+        }
+
+        .professional-prefix:before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: linear-gradient(90deg, #a899ff, #43d6ef);
+            box-shadow: 0 0 14px #8a76ff
+        }
+
+        .intro-prefix {
+            display: block;
+            font: 800 clamp(16px, 2.2vw, 26px) 'Space Grotesk', sans-serif;
+            letter-spacing: .22em;
+            color: #a9a4ff;
+            margin-bottom: 16px;
+            text-shadow: 0 0 22px #8070ef99;
+            opacity: 0;
+            animation: rise-in .8s .35s forwards
+        }
+
+        .intro-ar .intro-prefix {
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: 0;
+            font-size: clamp(22px, 3vw, 36px)
+        }
+
+        .skills {
+            align-items: stretch;
+            gap: 20px
+        }
+
+        .skills .skill {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            min-height: 320px;
+            padding: 26px 22px 28px;
+            border: 1px solid #33415d;
+            background: linear-gradient(155deg, #162237, #0b1425 70%);
+            transition: transform .45s cubic-bezier(.2, .8, .2, 1), box-shadow .45s, border-color .45s
+        }
+
+        .skills .skill:before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(circle at 50% -12%, #8675ff38, transparent 58%);
+            opacity: .55;
+            z-index: -1;
+            transition: opacity .45s
+        }
+
+        .skills .skill:after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            bottom: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8e82ff, #43d6ef, transparent);
+            transform: scaleX(0);
+            transition: transform .45s
+        }
+
+        .skills .skill:hover {
+            transform: translateY(-12px);
+            border-color: #8d83ff99;
+            box-shadow: 0 22px 65px #070b15, 0 0 35px #8070ef22
+        }
+
+        .skills .skill:hover:before {
+            opacity: 1
+        }
+
+        .skills .skill:hover:after {
+            transform: scaleX(1)
+        }
+
+        .skill-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 27px;
+            direction: ltr
+        }
+
+        .skill-icon {
+            width: 54px;
+            height: 54px;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            background: linear-gradient(145deg, #7d6af333, #36cce81a);
+            border: 1px solid #827dff55;
+            color: #d4d0ff;
+            font: 800 26px 'Space Grotesk';
+            box-shadow: 0 8px 28px #7369ff22
+        }
+
+        .skill-index {
+            font: 700 11px 'Space Grotesk';
+            letter-spacing: .16em;
+            color: #7686a8
+        }
+
+        .skills .skill h3 {
+            font-size: clamp(17px, 1.7vw, 21px);
+            line-height: 1.55;
+            margin: 0 0 18px;
+            min-height: 50px
+        }
+
+        .skills .chips {
+            gap: 9px
+        }
+
+        .skills .chip {
+            padding: 9px 12px;
+            border-radius: 11px;
+            border: 1px solid #7585ad33;
+            background: linear-gradient(135deg, #ffffff0b, #ffffff05);
+            color: #dbe4f7;
+            font-size: 12px;
+            transition: transform .25s, background .25s, border-color .25s
+        }
+
+        .skills .chip:hover {
+            transform: translateY(-4px) scale(1.04);
+            background: #8a76ff24;
+            border-color: #8a76ff88
+        }
+
+        html[dir=rtl] .professional-prefix {
+            font-family: 'Cairo', sans-serif;
+            letter-spacing: 0;
+            font-size: 17px
+        }
+
+        html[dir=rtl] .skills .skill h3 {
+            font-family: 'Cairo', sans-serif
+        }
+
+        @media(max-width:850px) {
+            .skills .skill {
+                min-height: 290px
+            }
+        }
+
+        @media(max-width:600px) {
+            .skills .skill {
+                min-height: 0
+            }
+
+            .skill-top {
+                margin-bottom: 18px
+            }
+
+            .skills .skill h3 {
+                min-height: 0
+            }
+
+            .professional-prefix {
+                font-size: 11px;
+                letter-spacing: .15em
+            }
+        }
+
+        /* Clean honorific alongside the name */
+        .professional-prefix {
+            display: none !important
+        }
+
+        .name-honorific {
+            display: inline-block;
+            vertical-align: baseline;
+            font-size: .32em;
+            letter-spacing: 0;
+            color: #9e9bff;
+            font-weight: 800;
+            margin-inline-end: .13em;
+            white-space: nowrap
+        }
+
+        .hero h1.name-title {
+            font-size: clamp(43px, 5.5vw, 80px);
+            letter-spacing: -.055em;
+            overflow-wrap: normal
+        }
+
+        .hero .name-line {
+            white-space: nowrap
+        }
+
+        html[dir=rtl] .hero h1.name-title {
+            font-size: clamp(36px, 5.1vw, 72px);
+            letter-spacing: -.04em
+        }
+
+        .intro-prefix {
+            display: inline-block !important;
+            font-size: .29em !important;
+            letter-spacing: 0 !important;
+            margin: 0 .16em 0 0 !important;
+            vertical-align: middle
+        }
+
+        .intro-name .intro-en,
+        .intro-name .intro-ar {
+            white-space: nowrap
+        }
+
+        .intro-name .intro-prefix {
+            animation: rise-in .6s .3s forwards
+        }
+
+        .intro-progress {
+            display: none !important
+        }
+
+        /* Floating code terminal within the animated orb */
+        .orb {
+            display: grid;
+            place-items: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .orb-code {
+            width: 78%;
+            min-height: 128px;
+            padding: 15px 13px;
+            border-radius: 15px;
+            background: #070e20b8;
+            border: 1px solid #b5e9ff5c;
+            box-shadow: 0 12px 40px #0008, 0 0 25px #66dcff30;
+            backdrop-filter: blur(9px);
+            transform: rotate(-6deg);
+            font: 600 clamp(9px, 1vw, 12px)/1.65 'Space Grotesk', monospace;
+            color: #bceeff;
+            direction: ltr;
+            text-align: left
+        }
+
+        .code-dot {
+            color: #a58dff;
+            font-size: 10px;
+            letter-spacing: 4px
+        }
+
+        .orb-code pre {
+            white-space: pre-wrap;
+            margin: 10px 0 0;
+            font: inherit;
+            min-height: 70px
+        }
+
+        .code-caret {
+            display: inline-block;
+            width: 7px;
+            height: 13px;
+            background: #5fe0fa;
+            animation: blink .8s steps(1) infinite
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0
+            }
+        }
+
+        @media(max-width:600px) {
+            .hero h1.name-title {
+                font-size: clamp(31px, 8.5vw, 52px)
+            }
+
+            html[dir=rtl] .hero h1.name-title {
+                font-size: clamp(29px, 7.8vw, 47px)
+            }
+
+            .orb-code {
+                width: 82%;
+                font-size: 10px;
+                min-height: 110px
+            }
+        }
+
+        /* Refined name composition: honorific sits naturally next to the name, not detached. */
+        .hero h1.name-title {
+            font-size: clamp(34px, 5.2vw, 76px);
+            line-height: 1.14;
+            letter-spacing: -.045em;
+            max-width: 100%;
+        }
+
+        .hero .name-line:first-child {
+            display: flex;
+            align-items: baseline;
+            gap: .14em;
+            white-space: nowrap;
+        }
+
+        .hero .name-honorific {
+            font-size: .25em;
+            line-height: 1;
+            flex: none;
+            margin: 0;
+            vertical-align: baseline;
+            letter-spacing: 0;
+            color: #a79aff;
+        }
+
+        html[dir=rtl] .hero h1.name-title {
+            font-size: clamp(32px, 5vw, 69px);
+            letter-spacing: -.025em;
+        }
+
+        html[dir=rtl] .hero .name-line:first-child {
+            direction: rtl;
+            justify-content: flex-start;
+        }
+
+        .intro-name .intro-first {
+            display: flex !important;
+            align-items: baseline;
+            justify-content: center;
+            gap: .18em;
+        }
+
+        .intro-name .intro-prefix {
+            display: inline-block !important;
+            position: static !important;
+            margin: 0 !important;
+            font-size: .24em !important;
+            line-height: 1 !important;
+            letter-spacing: 0 !important;
+            vertical-align: baseline !important;
+            animation: none !important;
+            opacity: 1 !important;
+            flex: none;
+        }
+
+        html[lang=ar] .intro-name .intro-first {
+            direction: rtl;
+        }
+
+        #cinematic-intro {
+            transition: opacity .3s ease, visibility .3s ease;
+        }
+
+        .intro-name {
+            font-size: clamp(35px, 7.5vw, 104px);
+        }
+
+        html[lang=ar] .intro-name {
+            font-size: clamp(33px, 7vw, 90px);
+        }
+
+        .orb-code {
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+        }
+
+        @media(max-width:800px) {
+            .hero h1.name-title {
+                font-size: clamp(27px, 6vw, 53px)
+            }
+
+            html[dir=rtl] .hero h1.name-title {
+                font-size: clamp(27px, 5.7vw, 51px)
+            }
+        }
+
+        @media(max-width:480px) {
+            .hero h1.name-title {
+                font-size: clamp(25px, 7vw, 36px)
+            }
+
+            html[dir=rtl] .hero h1.name-title {
+                font-size: clamp(25px, 6.6vw, 35px)
+            }
+
+            .intro-name {
+                font-size: clamp(30px, 8.5vw, 44px)
+            }
+
+            html[lang=ar] .intro-name {
+                font-size: clamp(29px, 8vw, 43px)
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="intro-active">
+    <div id="cinematic-intro" role="dialog" aria-label="Portfolio introduction" aria-modal="true">
+        <div class="intro-grid" aria-hidden="true"></div>
+        <div class="intro-content">
+            <div class="intro-overline"><span class="intro-en">WELCOME TO MY PORTFOLIO</span><span
+                    class="intro-ar">أهلًا بك في معرض أعمالي</span></div>
+            <div class="intro-name" aria-label="Ahmad Aref Musleh"><span class="intro-en"><span
+                        class="intro-line intro-first"><span class="intro-prefix"></span><span>Eng. AHMAD
+                            AREF</span></span><span class="intro-line">MUSLEH.</span></span><span class="intro-ar"><span
+                        class="intro-line intro-first"><span class="intro-prefix"></span><span>م. أحمد
+                            عارف</span></span><span class="intro-line">مصلح</span></span></div>
+            <div class="intro-subtitle"><span class="intro-en">SOFTWARE ENGINEER · LARAVEL DEVELOPER</span><span
+                    class="intro-ar">مهندس برمجيات · مطوّر Laravel</span></div>
+            <div class="intro-progress" aria-hidden="true"></div>
+        </div><button class="intro-skip" id="intro-skip" type="button"><span class="intro-en">Skip intro →</span><span
+                class="intro-ar">تخطي المقدمة ←</span></button>
+    </div>
+    <div class="cursor-glow" id="glow"></div>
+    <header>
+        <nav class="nav"><a class="logo" href="#home">AHMAD<span>.</span></a>
+            <div class="links"><a href="#about"><span data-i18n-ar="عني" data-i18n-en="About">About</span></a><a
+                    href="#skills"><span data-i18n-ar="المهارات" data-i18n-en="Skills">Skills</span></a><a
+                    href="#projects"><span data-i18n-ar="المشاريع" data-i18n-en="Projects">Projects</span></a><a
+                    href="#experience"><span data-i18n-ar="الخبرات" data-i18n-en="Experience">Experience</span></a><a
+                    href="#education"><span data-i18n-ar="التعليم" data-i18n-en="Education">Education</span></a></div>
+            <div class="nav-actions">
+                <div aria-label="Website language" class="lang-toggle" role="group"><button aria-pressed="true"
+                        class="lang-btn active" data-lang="en" type="button">EN</button><button aria-pressed="false"
+                        class="lang-btn" data-lang="ar" type="button">عربي</button></div><a class="pill"
+                    href="#contact"><span data-i18n-ar="تواصل معي ↗" data-i18n-en="Let's talk ↗">Let's talk ↗</span></a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+                <div>
+                    <div class="eyebrow"><span data-i18n-ar="✦ مهندس برمجيات · مطوّر · مدرّب"
+                            data-i18n-en="✦ ENGINEER · DEVELOPER · EDUCATOR">✦ ENGINEER · DEVELOPER · EDUCATOR</span>
+                    </div>
+                    <div class="name-kicker"><span data-i18n-ar="مرحبًا، أنا" data-i18n-en="HELLO, I AM">HELLO, I
+                            AM</span></div>
+                    <h1 class="name-title"><span class="name-line"><span class="name-honorific"
+                                id="name-honorific"></span> <span id="name-first">Eng. AHMAD AREF</span></span><span
+                            class="name-line gradient">MUSLEH.</span></h1>
+                    <div class="hero-role"><span data-i18n-ar="مهندس برمجيات · مطوّر Laravel Backend"
+                            data-i18n-en="Software Engineer · Laravel Backend Developer">Software Engineer · Laravel
+                            Backend Developer</span></div>
+                    <p><span data-i18n-ar="أطوّر أنظمة خلفية موثوقة وتطبيقات ويب هادفة، وأساهم في تأهيل الجيل القادم من المبرمجين."
+                            data-i18n-en="I build reliable backend systems, develop meaningful web applications, and help the next generation of programmers grow.">I
+                            build reliable backend systems, develop meaningful web applications, and help the next
+                            generation of programmers grow.</span></p>
+                    <div class="actions"><a class="pill primary" href="#projects"><span data-i18n-ar="استكشف أعمالي ↗"
+                                data-i18n-en="Explore my work ↗">Explore my work ↗</span></a><a class="pill"
+                            href="#contact"><span data-i18n-ar="تواصل معي ←" data-i18n-en="Get in touch →">Get in touch
+                                →</span></a></div>
+                </div>
+                <div class="visual" id="visual">
+                    <div class="orb">
+                        <div class="orb-code" aria-hidden="true"><span class="code-dot">● ● ●</span>
+                            <pre id="orb-code-text"></pre><span class="code-caret"></span>
+                        </div>
+                    </div>
+                    <div class="ring"></div>
+                    <div class="float-tag tag1">{ Laravel + PHP }</div>
+                    <div class="float-tag tag2">REST API ✓</div>
+                    <div class="float-tag tag3">&lt;/&gt; Backend</div>
+                </div>
+            </div>
+            <div class="scroll-note"><span data-i18n-ar="مرّر لاستكشاف الموقع ↓"
+                    data-i18n-en="SCROLL TO EXPLORE ↓">SCROLL TO EXPLORE ↓</span></div>
+        </section>
+        <section id="about">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div class="eyebrow"><span data-i18n-ar="01 / نبذة عني" data-i18n-en="01 / About me">01 / About
+                            me</span></div>
+                    <h2><span data-i18n-ar="مهندس. " data-i18n-en="Engineer. ">Engineer. </span><span
+                            class="gradient"><span data-i18n-ar="مدرّب."
+                                data-i18n-en="Educator.">Educator.</span></span><span data-i18n-ar=" ومطوّر."
+                            data-i18n-en=" Builder."> Builder.</span></h2>
+                    <p><span data-i18n-ar="خريج هندسة برمجيات من جامعة الأزهر بتقدير امتياز، وأتابع حاليًا دراسة الماجستير في الحوسبة ونظم المعلومات. أجمع بين تطوير تطبيقات الويب والخبرة في تدريس البرمجة والإرشاد التقني والدعم الأكاديمي."
+                            data-i18n-en="Software Engineering graduate from Al-Azhar University with an excellent academic record, currently pursuing a Master's in Computing and Information Systems. I combine hands-on web development with years of programming instruction, academic support, and technical mentorship.">Software
+                            Engineering graduate from Al-Azhar University with an excellent academic record, currently
+                            pursuing a Master's in Computing and Information Systems. I combine hands-on web development
+                            with years of programming instruction, academic support, and technical mentorship.</span>
+                    </p>
+                </div>
+                <div class="stats">
+                    <div class="stat reveal"><strong>2022</strong>
+                        <p><span data-i18n-ar="أدرّس البرمجة منذ" data-i18n-en="Teaching programming since">Teaching
+                                programming since</span></p>
+                    </div>
+                    <div class="stat reveal"><strong>90.62</strong>
+                        <p><span data-i18n-ar="معدل البكالوريوس من 100 — امتياز"
+                                data-i18n-en="Bachelor's GPA / 100 — Excellent">Bachelor's GPA / 100 — Excellent</span>
+                        </p>
+                    </div>
+                    <div class="stat reveal"><strong>02</strong>
+                        <p><span data-i18n-ar="مشروعان برمجيان مختاران"
+                                data-i18n-en="Selected software projects">Selected software projects</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div class="eyebrow"><span data-i18n-ar="02 / الخبرات التقنية" data-i18n-en="02 / Expertise">02 /
+                            Expertise</span></div>
+                    <h2><span data-i18n-ar="أدواتي " data-i18n-en="My ">My </span><span class="gradient"><span
+                                data-i18n-ar="التقنية." data-i18n-en="toolkit.">toolkit.</span></span></h2>
+                    <p><span data-i18n-ar="التقنيات والمفاهيم التي أستخدمها لبناء تطبيقات موثوقة وتدريس هندسة البرمجيات عمليًا."
+                            data-i18n-en="Technologies and concepts I use to build reliable applications and teach practical software engineering.">Technologies
+                            and concepts I use to build reliable applications and teach practical software
+                            engineering.</span></p>
+                </div>
+                <div class="skills">
+                    <div class="card skill reveal">
+                        <div class="skill-top"><span class="skill-icon" aria-hidden="true">⌘</span><span
+                                class="skill-index">01 / 04</span></div>
+                        <h3><span data-i18n-ar="لغات البرمجة" data-i18n-en="Languages">Languages</span></h3>
+                        <div class="chips"><span class="chip">PHP</span><span class="chip">Java</span><span
+                                class="chip">Python</span><span class="chip">C</span></div>
+                    </div>
+                    <div class="card skill reveal">
+                        <div class="skill-top"><span class="skill-icon" aria-hidden="true">{ }</span><span
+                                class="skill-index">02 / 04</span></div>
+                        <h3><span data-i18n-ar="الويب وواجهات البرمجة" data-i18n-en="Web &amp; APIs">Web &amp;
+                                APIs</span></h3>
+                        <div class="chips"><span class="chip">Laravel</span><span class="chip">RESTful APIs</span><span
+                                class="chip">Blade</span><span class="chip">HTML</span><span
+                                class="chip">CSS</span><span class="chip">JavaScript</span></div>
+                    </div>
+                    <div class="card skill reveal">
+                        <div class="skill-top"><span class="skill-icon" aria-hidden="true">▦</span><span
+                                class="skill-index">03 / 04</span></div>
+                        <h3><span data-i18n-ar="قواعد البيانات والأدوات" data-i18n-en="Data &amp; Tools">Data &amp;
+                                Tools</span></h3>
+                        <div class="chips"><span class="chip">MySQL</span><span class="chip">Eloquent ORM</span><span
+                                class="chip">Git</span><span class="chip">GitHub</span><span
+                                class="chip">Postman</span><span class="chip">Composer</span></div>
+                    </div>
+                    <div class="card skill reveal">
+                        <div class="skill-top"><span class="skill-icon" aria-hidden="true">◇</span><span
+                                class="skill-index">04 / 04</span></div>
+                        <h3><span data-i18n-ar="المفاهيم الهندسية" data-i18n-en="Engineering">Engineering</span></h3>
+                        <div class="chips"><span class="chip">OOP</span><span class="chip">MVC</span><span
+                                class="chip">Database Design</span><span class="chip">Authentication</span><span
+                                class="chip">Authorization</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div class="eyebrow"><span data-i18n-ar="03 / أعمال مختارة" data-i18n-en="03 / Selected work">03 /
+                            Selected work</span></div>
+                    <h2><span data-i18n-ar="مشاريع ذات " data-i18n-en="Projects with ">Projects with </span><span
+                            class="gradient"><span data-i18n-ar="قيمة." data-i18n-en="purpose.">purpose.</span></span>
+                    </h2>
+                    <p><span data-i18n-ar="مجموعة من مشاريعي البرمجية. يمكن إضافة صور وروابط المشاريع عند توفرها."
+                            data-i18n-en="Selected projects from my professional portfolio. Project links and screenshots can be added when available.">Selected
+                            projects from my professional portfolio. Project links and screenshots can be added when
+                            available.</span></p>
+                </div>
+                <div class="projects">
+                    <article class="card reveal">
+                        <div class="project-art"><span>EDU<span class="gradient">.</span></span></div>
+                        <div class="eyebrow">Laravel • MySQL • Sanctum</div>
+                        <h3><span data-i18n-ar="منصة غزة التعليمية" data-i18n-en="Gaza Educational Platform">Gaza
+                                Educational Platform</span></h3>
+                        <p><span data-i18n-ar="منصة لإدارة التعليم تضم وحدات للمشرفين والمعلمين والطلاب وأولياء الأمور، وتشمل الحضور والدرجات والصفوف والرسوم والاختبارات والحصص الإلكترونية وإدارة الملفات، مع واجهات REST آمنة."
+                                data-i18n-en="Educational management platform for administrators, teachers, students, and parents. Includes attendance, grades, classrooms, fees, quizzes, online classes, and file management, with authenticated RESTful APIs.">Educational
+                                management platform for administrators, teachers, students, and parents. Includes
+                                attendance, grades, classrooms, fees, quizzes, online classes, and file management, with
+                                authenticated RESTful APIs.</span></p>
+                        <div class="chips"><span class="chip">Laravel</span><span class="chip">REST APIs</span><span
+                                class="chip">Repository Pattern</span></div>
+                    </article>
+                    <article class="card reveal">
+                        <div class="project-art hospital"><span>MED<span class="gradient">.</span></span></div>
+                        <div class="eyebrow">Laravel • PHP • Blade</div>
+                        <h3><span data-i18n-ar="نظام إدارة مستشفى" data-i18n-en="Hospital Management System">Hospital
+                                Management System</span></h3>
+                        <p><span data-i18n-ar="نظام لإدارة المستشفيات يشمل المرضى والأطباء والمواعيد والأقسام والفواتير والتأمين والمختبر والأشعة والإسعاف، مع لوحات تحكم مخصصة حسب صلاحيات المستخدمين."
+                                data-i18n-en="Multi-role hospital system covering patients, doctors, appointments, departments, invoices, insurance, laboratory tests, radiology, and ambulance management, with dedicated role-based dashboards.">Multi-role
+                                hospital system covering patients, doctors, appointments, departments, invoices,
+                                insurance, laboratory tests, radiology, and ambulance management, with dedicated
+                                role-based dashboards.</span></p>
+                        <div class="chips"><span class="chip">MySQL</span><span class="chip">Eloquent ORM</span><span
+                                class="chip">Dashboards</span></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="experience">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div class="eyebrow"><span data-i18n-ar="04 / المسيرة المهنية" data-i18n-en="04 / Career">04 /
+                            Career</span></div>
+                    <h2><span data-i18n-ar="خبراتي " data-i18n-en="Experience &amp; ">Experience &amp; </span><span
+                            class="gradient"><span data-i18n-ar="وأثري." data-i18n-en="impact.">impact.</span></span>
+                    </h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="date"><span data-i18n-ar="نوفمبر 2022 — حتى الآن"
+                                data-i18n-en="NOV 2022 — PRESENT">NOV 2022 — PRESENT</span></div>
+                        <div>
+                            <h3><span data-i18n-ar="مدرّب برمجة" data-i18n-en="Programming Instructor">Programming
+                                    Instructor</span></h3>
+                            <p class="place"><span data-i18n-ar="شركة Code Nest · غزة، فلسطين"
+                                    data-i18n-en="Code Nest Company · Gaza, Palestine">Code Nest Company · Gaza,
+                                    Palestine</span></p>
+                            <p><span data-i18n-ar="أدرّس C وJava وPython، وأعد التمارين والتقييمات، وأوجّه المتدربين في الخوارزميات والبرمجة كائنية التوجه وحل المشكلات."
+                                    data-i18n-en="Teach C, Java, and Python; prepare assignments and assessments; guide students through algorithms, OOP, and practical problem-solving.">Teach
+                                    C, Java, and Python; prepare assignments and assessments; guide students through
+                                    algorithms, OOP, and practical problem-solving.</span></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="date"><span data-i18n-ar="أكتوبر 2025 — حتى الآن"
+                                data-i18n-en="OCT 2025 — PRESENT">OCT 2025 — PRESENT</span></div>
+                        <div>
+                            <h3><span data-i18n-ar="معيد — كلية الهندسة"
+                                    data-i18n-en="Teaching Assistant — Faculty of Engineering">Teaching Assistant —
+                                    Faculty of Engineering</span></h3>
+                            <p class="place"><span data-i18n-ar="جامعة الأزهر · غزة، فلسطين"
+                                    data-i18n-en="Al-Azhar University · Gaza, Palestine">Al-Azhar University · Gaza,
+                                    Palestine</span></p>
+                            <p><span data-i18n-ar="أساعد في مختبرات البرمجة والتمارين العملية ومراجعة الأكواد وشرح هندسة البرمجيات والتقييمات التقنية."
+                                    data-i18n-en="Support programming labs, practical exercises, code reviews, software engineering instruction, and technical assessments.">Support
+                                    programming labs, practical exercises, code reviews, software engineering
+                                    instruction, and technical assessments.</span></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="date"><span data-i18n-ar="مايو 2025 — حتى الآن"
+                                data-i18n-en="MAY 2025 — PRESENT">MAY 2025 — PRESENT</span></div>
+                        <div>
+                            <h3><span data-i18n-ar="مشرف تدريب ميداني" data-i18n-en="Field Training Supervisor">Field
+                                    Training Supervisor</span></h3>
+                            <p class="place"><span data-i18n-ar="شركة Code Nest · غزة، فلسطين"
+                                    data-i18n-en="Code Nest Company · Gaza, Palestine">Code Nest Company · Gaza,
+                                    Palestine</span></p>
+                            <p><span data-i18n-ar="أشرف على تدريب طلبة الجامعات ميدانيًا، وأكلفهم بمهام تقنية وأتابع تقدمهم وأنسق متطلبات التدريب."
+                                    data-i18n-en="Mentor university field-training students, assign technical tasks, evaluate progress, and coordinate training requirements.">Mentor
+                                    university field-training students, assign technical tasks, evaluate progress, and
+                                    coordinate training requirements.</span></p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="date"><span data-i18n-ar="يناير 2023 — حتى الآن"
+                                data-i18n-en="JAN 2023 — PRESENT">JAN 2023 — PRESENT</span></div>
+                        <div>
+                            <h3><span data-i18n-ar="مطوّر ويب مستقل" data-i18n-en="Freelance Web Developer">Freelance
+                                    Web Developer</span></h3>
+                            <p class="place"><span data-i18n-ar="عمل مستقل · عن بُعد"
+                                    data-i18n-en="Self-employed · Remote">Self-employed · Remote</span></p>
+                            <p><span data-i18n-ar="أطوّر تطبيقات Laravel وأنظمة الإدارة بما يشمل المصادقة والصلاحيات ولوحات التحكم وعلاقات قواعد البيانات وواجهات REST."
+                                    data-i18n-en="Develop Laravel applications and management systems with authentication, authorization, dashboards, database relationships, and RESTful APIs.">Develop
+                                    Laravel applications and management systems with authentication, authorization,
+                                    dashboards, database relationships, and RESTful APIs.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div class="eyebrow"><span data-i18n-ar="05 / التعليم والتطوير" data-i18n-en="05 / Learning">05 /
+                            Learning</span></div>
+                    <h2><span data-i18n-ar="تعلّم " data-i18n-en="Always ">Always </span><span class="gradient"><span
+                                data-i18n-ar="مستمر." data-i18n-en="evolving.">evolving.</span></span></h2>
+                </div>
+                <div class="edu">
+                    <div class="card reveal">
+                        <div class="eyebrow"><span data-i18n-ar="2025 — حتى الآن" data-i18n-en="2025 — PRESENT">2025 —
+                                PRESENT</span></div>
+                        <h3><span data-i18n-ar="ماجستير الحوسبة ونظم المعلومات"
+                                data-i18n-en="Master's in Computing &amp; Information Systems">Master's in Computing
+                                &amp; Information Systems</span></h3>
+                        <p><span data-i18n-ar="جامعة الأزهر · قيد الدراسة"
+                                data-i18n-en="Al-Azhar University · In progress">Al-Azhar University · In
+                                progress</span></p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="eyebrow"><span data-i18n-ar="2020 — 2025" data-i18n-en="2020 — 2025">2020 —
+                                2025</span></div>
+                        <h3><span data-i18n-ar="بكالوريوس هندسة البرمجيات"
+                                data-i18n-en="Bachelor's in Software Engineering">Bachelor's in Software
+                                Engineering</span></h3>
+                        <p><span data-i18n-ar="جامعة الأزهر · المعدل: 90.62/100 — امتياز"
+                                data-i18n-en="Al-Azhar University · GPA: 90.62/100 — Excellent">Al-Azhar University ·
+                                GPA: 90.62/100 — Excellent</span></p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="eyebrow"><span data-i18n-ar="يوليو 2022 · 60 ساعة"
+                                data-i18n-en="JULY 2022 · 60 HOURS">JULY 2022 · 60 HOURS</span></div>
+                        <h3><span data-i18n-ar="تطوير الويب باستخدام PHP وLaravel"
+                                data-i18n-en="PHP &amp; Laravel Web Development">PHP &amp; Laravel Web
+                                Development</span></h3>
+                        <p><span data-i18n-ar="شركة Top Tech · تطوير الخلفية وقواعد البيانات العلائقية ولوحات التحكم والمصادقة."
+                                data-i18n-en="Top Tech Company · Backend development, relational databases, dashboards, and authentication.">Top
+                                Tech Company · Backend development, relational databases, dashboards, and
+                                authentication.</span></p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="eyebrow"><span data-i18n-ar="أغسطس 2021 · 70 ساعة"
+                                data-i18n-en="AUGUST 2021 · 70 HOURS">AUGUST 2021 · 70 HOURS</span></div>
+                        <h3><span data-i18n-ar="تطوير الويب المتكامل"
+                                data-i18n-en="Full-Stack Web Development">Full-Stack Web Development</span></h3>
+                        <p><span data-i18n-ar="مركز ريادة · الواجهات المتجاوبة والمواقع المرتبطة بقواعد البيانات."
+                                data-i18n-en="Riyada Center · Responsive interfaces and database-driven websites.">Riyada
+                                Center · Responsive interfaces and database-driven websites.</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <div class="contact reveal">
+                    <div class="eyebrow"><span data-i18n-ar="06 / التواصل" data-i18n-en="06 / Contact">06 /
+                            Contact</span></div>
+                    <h2><span data-i18n-ar="لنصنع شيئًا " data-i18n-en="Let's build something ">Let's build something
+                        </span><span class="gradient"><span data-i18n-ar="رائعًا."
+                                data-i18n-en="great.">great.</span></span></h2>
+                    <p><span data-i18n-ar="هل ترغب بالتعاون في مشروع Backend أو تطبيق ويب أو مبادرة تعليم تقني؟ يسعدني التواصل معك."
+                            data-i18n-en="Interested in collaborating on a backend project, web application, or technical education initiative? I'd love to hear from you.">Interested
+                            in collaborating on a backend project, web application, or technical education initiative?
+                            I'd love to hear from you.</span></p>
+                    <div class="contact-links"><a class="pill primary" href="mailto:ahmaadmulseh2@gmail.com"><span
+                                data-i18n-ar="راسلني ↗" data-i18n-en="Email me ↗">Email me ↗</span></a><a class="pill"
+                            href="https://github.com/ahmaadArf" rel="noopener noreferrer" target="_blank">GitHub ↗</a><a
+                            class="pill" href="tel:+970597383039"><span data-i18n-ar="اتصل بي ↗"
+                                data-i18n-en="Call me ↗">Call me ↗</span></a></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-inner"><span>© <span id="year"></span> Ahmad Aref Musleh</span><span><span
+                    data-i18n-ar="صُمّم بعناية، وطُوّر للويب."
+                    data-i18n-en="Designed with intention. Built for the web.">Designed with intention. Built for the
+                    web.</span></span></div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear(); const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target) } }), { threshold: .12 }); document.querySelectorAll('.reveal').forEach(el => observer.observe(el)); const glow = document.getElementById('glow'); const visual = document.getElementById('visual'); if (matchMedia('(pointer:fine)').matches) { window.addEventListener('pointermove', e => { glow.style.left = e.clientX + 'px'; glow.style.top = e.clientY + 'px'; const r = visual.getBoundingClientRect(); if (e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom) { const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; visual.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 8}deg)` } else visual.style.transform = 'none' }, { passive: true }) }</script>
+    <script>
+        (function () {
+            const translations = document.querySelectorAll('[data-i18n-en]');
+            const buttons = document.querySelectorAll('.lang-btn');
+            const names = document.querySelectorAll('.name-title .name-line');
+            const setLang = (lang) => {
+                const ar = lang === 'ar'; document.documentElement.lang = lang; document.documentElement.dir = ar ? 'rtl' : 'ltr';
+                translations.forEach(el => { el.textContent = el.getAttribute(ar ? 'data-i18n-ar' : 'data-i18n-en') });
+                document.getElementById('name-honorific').textContent = ar ? '' : ''; document.getElementById('name-first').textContent = ar ? 'م. أحمد عارف' : 'Eng. AHMAD AREF'; names[1].textContent = ar ? 'مصلح' : 'MUSLEH.';
+                buttons.forEach(b => { const selected = b.dataset.lang === lang; b.classList.toggle('active', selected); b.setAttribute('aria-pressed', String(selected)) });
+                document.title = ar ? 'م. أحمد عارف مصلح | مهندس برمجيات' : 'Eng. Ahmad Aref Musleh | Software Engineer';
+                try { localStorage.setItem('ahmad-portfolio-lang', lang) } catch (e) { }
+            };
+            buttons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+            let lang = 'en'; try { lang = localStorage.getItem('ahmad-portfolio-lang') || 'en' } catch (e) { } setLang(lang === 'ar' ? 'ar' : 'en');
+        })();
+    </script>
+    <script>
+        (function () {
+            const overlay = document.getElementById('cinematic-intro');
+            const skip = document.getElementById('intro-skip');
+            const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let finished = false; let timeout;
+            function finish() { if (finished) return; finished = true; clearTimeout(timeout); overlay.classList.add('is-done'); overlay.setAttribute('aria-hidden', 'true'); document.body.classList.remove('intro-active'); setTimeout(() => overlay.remove(), 850) }
+            skip.addEventListener('click', finish);
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !finished) finish() });
+            if (reduced) { finish() } else {
+                // Close immediately after the visible subtitle finishes its entrance.
+                const subtitle = overlay.querySelector(document.documentElement.lang === 'ar' ? '.intro-subtitle .intro-ar' : '.intro-subtitle .intro-en');
+                subtitle.addEventListener('animationend', e => { if (e.target === subtitle) finish() }, { once: true });
+                timeout = setTimeout(finish, 2600); // fallback only if animations are blocked
+            }
+        })();
+    </script>
+    <script>
+        (function () {
+            const target = document.getElementById('orb-code-text');
+            const lines = ['<?php', 'class Engineer {', '  public string $name =', '    "Ahmad Aref";', '  public function build() {', '    return "Laravel";', '  }', '}'];
+            const full = lines.join('\n'); let index = 0, forward = true;
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { target.textContent = full; return }
+            function type() { target.textContent = full.slice(0, index); if (forward) { index++; if (index > full.length) { forward = false; setTimeout(type, 2100); return } } else { index--; if (index < 0) { index = 0; forward = true; setTimeout(type, 450); return } } setTimeout(type, forward ? 55 : 18) }
+            type();
+        })();
+    </script>
+</body>
+
+</html>
